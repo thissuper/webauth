@@ -64,7 +64,7 @@ def redirect(userName, password):
         else:
             check()
     except requests.exceptions.ConnectionError:
-        logger.error('连接被重置，未能触发Web认证')
+        logger.error('连接被重置，未能触发 Web 认证')
     except Exception as err:
         logger.error(err)
 
@@ -114,7 +114,7 @@ def check():
     if r.status_code == 200:
         logger.info('连接互联网成功')
     else:
-        logger.error('无法连接互联网')
+        logger.error('无法连接互联网，请检查 DNS')
 
 
 def errorExit():
@@ -145,3 +145,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
